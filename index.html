@@ -205,6 +205,68 @@
   }
 </script>
 
+
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookie Clicker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  #cookie {
+    width: 200px;
+    height: 200px;
+    background-image: url('cookie.png');
+    background-size: cover;
+    cursor: pointer;
+  }
+  #score {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  button {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Cookie Clicker</h1>
+
+<div id="cookie" onclick="increaseScore()"></div>
+
+<p id="score">Kekse: 0</p>
+
+<button onclick="upgrade()">Upgrade (50 Kekse)</button>
+
+<script>
+  let score = 0;
+
+  function increaseScore() {
+    score++;
+    document.getElementById("score").innerText = "Kekse: " + score;
+  }
+
+  function upgrade() {
+    if (score >= 50) {
+      score -= 50;
+      document.getElementById("score").innerText = "Kekse: " + score;
+      alert("Du hast das Upgrade erhalten!");
+      // Füge hier die Funktionalität für das Upgrade hinzu
+    } else {
+      alert("Du hast nicht genug Kekse!");
+    }
+  }
+</script>
+
+</body>
+
+	
 </body>
 	    
 <html lang="de">

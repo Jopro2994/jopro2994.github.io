@@ -39,28 +39,32 @@
 
 
     
-    
+<html lang="de">
 <head>
-	<title>Counter</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zähler</title>
 </head>
 <body>
-	<?php
-	if(!isset($_SESSION['int_count'])) {
-			$_SESSION['int_count'] = 1;}
 
+<h1>Zähler</h1>
 
-	if(isset($_POST['counter'])) {
-		$_SESSION['int_count']++; } ?>
+<p id="counter">0</p>
 
-	<form method="post" action="counter.php">
-		<p>Der momentane Wert beträgt:</p>
-		<?php echo $_SESSION['int_count']; ?>
-		<title>Funktionirt leider ned :(</title>
+<button onclick="increaseCounter()">Erhöhen</button>
 
-		<input type="submit" name="counter" value="+1">
-	</form>
+<script>
+  var count = 0; // Variable zum Speichern des Zählerstands
+  
+  // Funktion zur Erhöhung des Zählers und Aktualisierung der Anzeige
+  function increaseCounter() {
+    count++; // Erhöhe den Zähler um 1
+    document.getElementById("counter").innerHTML = count; // Aktualisiere die Anzeige
+  }
+</script>
+
 </body>
+
 <body>
       <a id="5450836" href="http://www.besucherzaehler-html.de">Svz Besucherzähler</a><script type="text/javascript" language="JavaScript" src="https://www.besucherzaehler-html.de/counter_js.php?account=5450836&style=30"></script>
 </body>

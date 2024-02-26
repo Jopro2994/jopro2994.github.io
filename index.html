@@ -6,6 +6,7 @@
    </head>
     <body bgcolor="98a8a4"><center>
      <h1><font color="red" font face="Arial"><b>Ein Ort für alles und nix</font></b></h1>
+	    <h1>Willkommen auf unserer Webseite!</h1>
      <P><style="border:2px solid Blue;"><font face="Arial" color="99fadc">Ich habe garnix gemacht
         <br><audio controls src="gar-nix-gemacht-cutted.mp3">
      <P><style="border:2px solid DodgerBlue;"><font face="Arial" color="99fadc">Scotland forever
@@ -206,7 +207,28 @@
 
 </body>
 	    
-	     
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Besucherzähler</title>
+</head>
+<body>
+
+
+<p>Diese Webseite wurde bereits <span id="visitorCount">0</span> mal besucht.</p>
+
+<script>
+  // Besucherzähler
+  let visitorCount = localStorage.getItem('visitorCount') || 0;
+  visitorCount++;
+  localStorage.setItem('visitorCount', visitorCount);
+  document.getElementById('visitorCount').textContent = visitorCount;
+</script>
+
+</body>
+
+	
 <body>
       <a id="5450836" href="http://www.besucherzaehler-html.de">Svz Besucherzähler</a><script type="text/javascript" language="JavaScript" src="https://www.besucherzaehler-html.de/counter_js.php?account=5450836&style=30"></script>
 </body>

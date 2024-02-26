@@ -153,6 +153,59 @@
 
 </body>
 
+
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interaktive Umfrage</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    color: #333;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .emoji {
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .emoji:hover {
+    transform: scale(1.2);
+  }
+</style>
+</head>
+<body>
+
+<h1>Wie fühlen Sie sich heute?</h1>
+
+<div class="question">
+  <span class="emoji" onclick="selectEmoji('😄')">😄</span>
+  <span class="emoji" onclick="selectEmoji('😊')">😊</span>
+  <span class="emoji" onclick="selectEmoji('😐')">😐</span>
+  <span class="emoji" onclick="selectEmoji('😔')">😔</span>
+  <span class="emoji" onclick="selectEmoji('😢')">😢</span>
+</div>
+
+<form>
+  <label for="reason">Warum fühlen Sie sich so?</label><br>
+  <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br>
+  <input type="submit" value="Absenden">
+</form>
+
+<script>
+  function selectEmoji(emoji) {
+    document.getElementById('reason').value += emoji;
+  }
+</script>
+
+</body>
+	    
 	     
 <body>
       <a id="5450836" href="http://www.besucherzaehler-html.de">Svz Besucherzähler</a><script type="text/javascript" language="JavaScript" src="https://www.besucherzaehler-html.de/counter_js.php?account=5450836&style=30"></script>

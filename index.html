@@ -39,31 +39,6 @@
         <img src="arrow-2059.gif" height="300><br><br><br><br><br><br>
 
 
-<html lang="de">    
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zähler</title>
-</head>
-<body>
-
-<h1>Zähler</h1>
-
-<p id="counter">0</p>
-
-<button onclick="increaseCounter()">Erhöhen</button>
-
-<script>
-  var count = 0; // Variable zum Speichern des Zählerstands
-  
-  // Funktion zur Erhöhung des Zählers und Aktualisierung der Anzeige
-  function increaseCounter() {
-    count++; // Erhöhe den Zähler um 1
-    document.getElementById("counter").innerHTML = count; // Aktualisiere die Anzeige
-  }
-</script>
-
-</body>
 
 
 <html lang="de">
@@ -155,57 +130,6 @@
 </body>
 
 
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interaktive Umfrage</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  h1 {
-    color: #333;
-  }
-  .question {
-    margin-bottom: 20px;
-  }
-  .emoji {
-    font-size: 40px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  .emoji:hover {
-    transform: scale(1.2);
-  }
-</style>
-</head>
-<body>
-
-<h1>Wie fühlen Sie sich heute?</h1>
-
-<div class="question">
-  <span class="emoji" onclick="selectEmoji('😄')">😄</span>
-  <span class="emoji" onclick="selectEmoji('😊')">😊</span>
-  <span class="emoji" onclick="selectEmoji('😐')">😐</span>
-  <span class="emoji" onclick="selectEmoji('😔')">😔</span>
-  <span class="emoji" onclick="selectEmoji('😢')">😢</span>
-</div>
-
-<form>
-  <label for="reason">Warum fühlen Sie sich so?</label><br>
-  <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br>
-  <input type="submit" value="Absenden">
-</form>
-
-<script>
-  function selectEmoji(emoji) {
-    document.getElementById('reason').value += emoji;
-  }
-</script>
-
-
 
 <html lang="de">
 <head>
@@ -246,9 +170,10 @@
 
 <script>
   let score = 0;
+  let clickValue = 1;
 
   function increaseScore() {
-    score++;
+    score += clickValue;
     document.getElementById("score").innerText = "Kekse: " + score;
   }
 
@@ -256,8 +181,8 @@
     if (score >= 50) {
       score -= 50;
       document.getElementById("score").innerText = "Kekse: " + score;
-      alert("Du hast das Upgrade erhalten!");
-      // Füge hier die Funktionalität für das Upgrade hinzu
+      clickValue *= 2; // Jedes Upgrade verdoppelt den Klickwert
+      alert("Du hast das Upgrade erhalten! Dein Klickwert wurde verdoppelt.");
     } else {
       alert("Du hast nicht genug Kekse!");
     }
@@ -265,6 +190,7 @@
 </script>
 
 </body>
+
 
 	
 </body>

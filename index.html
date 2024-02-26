@@ -47,32 +47,18 @@
 <body>
 	<?php
 	if(!isset($_SESSION['int_count'])) {
-			$_SESSION['int_count'] = 1;
-		}
-
-
+			$_SESSION['int_count'] = 1;}
 
 
 	if(isset($_POST['counter'])) {
-		$_SESSION['int_count']++;
-		
-	}
-
-
-
-
-	?>
+		$_SESSION['int_count']++; } ?>
 
 	<form method="post" action="counter.php">
 		<p>Der momentane Wert beträgt:</p>
-		<?php 
-			echo $_SESSION['int_count']; 
-		?>
+		<?php echo $_SESSION['int_count']; ?>
 
 
-
-
-		<input type="submit" name="counter" value="Erhöhen">
+		<input type="submit" name="counter" value="+1">
 	</form>
 </body>
       <a id="5450836" href="http://www.besucherzaehler-html.de">Counter Kostenlos</a><script type="text/javascript" language="JavaScript" src="https://www.besucherzaehler-html.de/counter_js.php?account=5450836&style=12"></script>

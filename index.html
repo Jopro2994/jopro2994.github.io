@@ -174,13 +174,13 @@
 
   function increaseScore() {
     score += clickValue;
-    document.getElementById("score").innerText = "Kekse: " + score;
+    document.getElementById("score").innerText = "Cookies: " + score;
   }
 
   function upgrade() {
     if (score >= 50) {
       score -= 50;
-      document.getElementById("score").innerText = "Kekse: " + score;
+      document.getElementById("score").innerText = "Cookies: " + score;
       clickValue *= 2; // Jedes Upgrade verdoppelt den Klickwert
       alert("Du hast das Upgrade erhalten! Dein Klickwert wurde verdoppelt.");
     } else {

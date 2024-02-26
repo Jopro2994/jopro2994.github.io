@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -38,20 +39,43 @@
 
 
     
-    <body>
-        <?php
-            if( isset($_GET['zahl']) )
-            {
-                $zaehler = $_GET['zahl'] +1;    
-            }
-            else
-            {
-                $zaehler = 1;
-            }
-            echo '<a href="?zahl='.$zaehler.'">Klick mich</a>';
-            echo "<br />";
-            echo "Die Zahl lautet: ".$zaehler;
-        ?>       
-    </body>
+    
+<head>
+	<title>Counter</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+	<?php
+	if(!isset($_SESSION['int_count'])) {
+			$_SESSION['int_count'] = 1;
+		}
+
+
+
+
+	if(isset($_POST['counter'])) {
+		$_SESSION['int_count']++;
+		// Hier wäre dann der Platz um den Wert in eine Datenbank zu schreiben bzw. 
+		// in einem hinzugefügten else für die Leute die das Formular noch nicht gesendet haben zu laden
+		// dann könnte man sich das auch über SESSION sparen, was hier verwendet wird zum Speichern..
+	}
+
+
+
+
+	?>
+
+	<form method="post" action="counter.php">
+		<p>Der momentane Wert beträgt:</p>
+		<?php 
+			echo $_SESSION['int_count']; 
+		?>
+
+
+
+
+		<input type="submit" name="counter" value="Erhöhen">
+	</form>
+</body>
       <a id="5450836" href="http://www.besucherzaehler-html.de">Counter Kostenlos</a><script type="text/javascript" language="JavaScript" src="https://www.besucherzaehler-html.de/counter_js.php?account=5450836&style=12"></script>
 </html>

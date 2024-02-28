@@ -16,6 +16,10 @@
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
   }
   nav ul {
     list-style-type: none;
@@ -56,12 +60,34 @@
   .order-section button:hover {
     background-color: #0056b3;
   }
+  .logo {
+    width: 100px; /* Anpassen je nach Größe des Logos */
+    height: auto;
+    margin-top: 20px; /* Abstand nach oben */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Revolve Tech</h1>
+  <img src="logo.png" alt="Revolve Tech Logo" class="logo">
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
@@ -71,42 +97,16 @@
   </nav>
 </header>
 
+<section class="hero-section">
+  <img src="hero-image.jpg" alt="Revolve Tech" class="hero-image">
+  <div class="hero-text">
+    <h2>Welcome to Revolve Tech</h2>
+    <p>We create modern and stylish smartwatches and accessories to complement your lifestyle.</p>
+  </div>
+</section>
+
 <section id="about">
   <h2>About Us</h2>
-  <p>Welcome to Revolve Tech, where innovation meets excellence. We are dedicated to providing cutting-edge technology solutions to our clients.</p>
-  <img src="about-image.jpg" alt="About Image">
-</section>
+ 
 
-<section id="products">
-  <h2>Our Products</h2>
-  <p>Check out our latest collection of stylish smartwatches and accessories.</p>
-  <img src="products-image.jpg" alt="Products Image">
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>If you have any questions or inquiries, feel free to contact us:</p>
-  <p>Email: info@revolvtech.com</p>
-  <p>Phone: +1234567890</p>
-</section>
-
-<section class="order-section">
-  <h2>Order Now</h2>
-  <p>Place your order for our premium smartwatches now!</p>
-  <button>Order Now</button>
-</section>
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
-</script>
-
-</body>
-</html>
+  

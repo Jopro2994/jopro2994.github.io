@@ -4,109 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revolve Tech</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff;
-  }
-  nav ul li a:hover {
-    background-color: #0056b3;
-  }
-  section {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  .order-section {
-    background-color: #f2f2f2;
-    padding: 50px 20px;
-    text-align: center;
-  }
-  .order-section button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  .order-section button:hover {
-    background-color: #0056b3;
-  }
-  .logo {
-    width: 100px; /* Anpassen je nach Größe des Logos */
-    height: auto;
-    margin-top: 20px; /* Abstand nach oben */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-</style>
 </head>
-<body>
+<body style="font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0;">
 
-<header>
-  <img src="logo.png" alt="Revolve Tech Logo" class="logo">
+<header style="background-color: #333; color: #fff; padding: 20px 0; text-align: center;">
+  <h1>Revolve Tech</h1>
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul style="list-style-type: none; margin: 0; padding: 0;">
+      <li style="display: inline; margin: 0 10px;"><a href="#about" style="color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; background-color: #007bff;">About</a></li>
+      <li style="display: inline; margin: 0 10px;"><a href="#services" style="color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; background-color: #007bff;">Services</a></li>
+      <li style="display: inline; margin: 0 10px;"><a href="#contact" style="color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px; background-color: #007bff;">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero-section">
-  <img src="hero-image.jpg" alt="Revolve Tech" class="hero-image">
-  <div class="hero-text">
+<section class="hero-section" style="position: relative;">
+  <img src="hero-image.jpg" alt="Revolve Tech" class="hero-image" style="width: 100%; height: auto; display: block;">
+  <div class="hero-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; font-size: 32px;">
     <h2>Welcome to Revolve Tech</h2>
     <p>We create modern and stylish smartwatches and accessories to complement your lifestyle.</p>
   </div>
 </section>
 
-<section id="about">
+<section id="about" style="padding: 50px 20px;">
   <h2>About Us</h2>
- 
+  <p>Revolve Tech is dedicated to crafting cutting-edge smartwatches and accessories that seamlessly integrate technology with style. Our mission is to provide innovative solutions that enhance your everyday life.</p>
+</section>
 
-  
+<section id="services" style="padding: 50px 20px;">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Smartwatch Design</li>
+    <li>Accessory Development</li>
+    <li>Customization Services</li>
+    <li>Customer Support</li>
+  </ul>
+</section>
+
+<section id="contact" style="padding: 50px 20px;">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or inquiries, feel free to contact us:</p>
+  <p>Email: info@revolvtech.com</p>
+  <p>Phone: +1234567890</p>
+</section>
+
+<footer style="background-color: #0056b3; color: #fff; text-align: center; padding: 20px 0;">
+  <p>&copy; 2024 Revolve Tech. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

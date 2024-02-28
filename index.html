@@ -77,38 +77,14 @@ body {
     background-color: #f0f8ff; /* Hellblau */
     padding: 100px 20px;
     text-align: center;
-    animation: slideIn 1s ease; /* Animation für Einblenden */
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    animation: fadeIn 1s ease; /* Animation für Einblenden */
 }
 
 .section {
     background-color: #fff; /* Weiß */
     padding: 50px 20px;
     text-align: center;
-    animation: fadeInUp 1s ease; /* Animation für Einblenden */
-    opacity: 0; /* Text standardmäßig ausgeblendet */
-    transform: translateY(50px); /* Text standardmäßig nach unten verschieben */
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    animation: fadeIn 1s ease; /* Animation für Einblenden */
 }
 
 .footer {
@@ -116,7 +92,7 @@ body {
     color: #fff;
     text-align: center;
     padding: 20px 0;
-    animation: slideIn 1s ease; /* Animation für Einblenden */
+    animation: fadeIn 1s ease; /* Animation für Einblenden */
 }
 
 /* Generierter Text */
@@ -134,7 +110,7 @@ body {
   <h1>Revolve Tech</h1>
   <div class="navbar">
     <div class="dropdown">
-      <button class="dropbtn">Menu</button>
+      <button class="dropbtn">&#9776; Menu</button> <!-- Überarbeiteter Menü-Button -->
       <div class="dropdown-content">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -191,6 +167,11 @@ body {
 
 <footer class="footer">
   <p>&copy; 2024 Revolve Tech. All rights reserved.</p>
+  <div class="footer-buttons">
+    <button>Terms & Conditions</button>
+    <button>Privacy Policy</button>
+    <button>Cookie Settings</button>
+  </div>
 </footer>
 
 <!-- Generierter Text -->

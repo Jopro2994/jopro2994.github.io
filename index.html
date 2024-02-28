@@ -38,45 +38,55 @@
         <a href="https://www.youtube.com/watch?v=4t7BgyA7IOI" target="_blank"><img src=https://gifdb.com/images/high/animated-emoji-shiny-sunglasses-97hzm41tm1o6q97g.gif height="300"/></a>
         <img src="arrow-2059.gif" height="300><br><br><br><br><br><br>
 
+
 	     
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schere, Stein, Papier</title>
-<script>
-function spiel() {
-    var spielerAuswahl = document.getElementById("auswahl").value;
-    var optionen = ["Schere", "Stein", "Papier"];
-    var computerAuswahl = optionen[Math.floor(Math.random() * optionen.length)];
-    var ergebnis;
-    
-    if (spielerAuswahl === computerAuswahl) {
-        ergebnis = "Unentschieden!";
-    } else if ((spielerAuswahl === "Schere" && computerAuswahl === "Papier") || 
-               (spielerAuswahl === "Stein" && computerAuswahl === "Schere") || 
-               (spielerAuswahl === "Papier" && computerAuswahl === "Stein")) {
-        ergebnis = "Du gewinnst!";
-    } else {
-        ergebnis = "Computer gewinnt!";
-    }
-    
-    document.getElementById("ergebnis").innerHTML = "Du hast " + spielerAuswahl + " gewählt. Computer hat " + computerAuswahl + " gewählt. " + ergebnis;
-}
-</script>
+<title>Rock Paper Scissors</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-
-<h1>Schere, Stein, Papier</h1>
-<select id="auswahl">
-  <option value="Schere">Schere</option>
-  <option value="Stein">Stein</option>
-  <option value="Papier">Papier</option>
-</select>
-<button onclick="spiel()">Los!</button>
-<p id="ergebnis"></p>
-
+<h2>Rock Paper Scissors</h2>
+<p>Choose your move:</p>
+<button onclick="play('rock')">Rock</button>
+<button onclick="play('paper')">Paper</button>
+<button onclick="play('scissors')">Scissors</button>
+<p id="result"></p>
+<script>
+function play(playerMove) {
+    var computerMove = 'rock'; // Computer always chooses rock
+    var result = '';
+    var randomNumber = Math.floor(Math.random() * 100); // Generate random number between 0 and 99
+    
+    // Determine the winner
+    if ((playerMove === 'rock' && computerMove === 'scissors') ||
+        (playerMove === 'paper' && computerMove === 'rock') ||
+        (playerMove === 'scissors' && computerMove === 'paper')) {
+        if (randomNumber === 0) { // 1/100 chance for player to win
+            result = 'You win!';
+        } else {
+            result = 'Computer wins!';
+        }
+    } else if (playerMove === computerMove) {
+        result = 'It\'s a tie!';
+    } else {
+        result = 'Computer wins!';
+    }
+    
+    document.getElementById('result').innerHTML = 'You chose ' + playerMove + ', computer chose ' + computerMove + '. ' + result;
+}
+</script>
 </body>
+
+	     
+
 
 <html lang="de">
 <head>

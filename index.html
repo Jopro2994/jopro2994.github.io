@@ -60,6 +60,25 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.hero-section {
+    background-color: #f0f8ff; /* Hellblau */
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section {
+    background-color: #fff; /* Weiß */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333; /* Dunkelblau */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 </style>
 </head>
 <body>
@@ -73,25 +92,24 @@ body {
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a href="#Kaufen">Kaufen</a>
       </div>
     </div>
   </div>
 </div>
 
-<section class="hero-section" style="background-color: #f0f8ff; padding: 100px 20px;">
-  <div class="hero-text" style="color: #333; text-align: center; font-size: 32px;">
+<section class="hero-section">
+  <div class="hero-text">
     <h2>Welcome to Revolve Tech</h2>
     <p>We create modern and stylish smartwatches and accessories to complement your lifestyle. Our innovative products are designed to seamlessly integrate technology with elegance.</p>
   </div>
 </section>
 
-<section id="about" style="background-color: #fff; padding: 50px 20px;">
+<section id="about" class="section">
   <h2>About Us</h2>
   <p>Revolve Tech is dedicated to crafting cutting-edge smartwatches and accessories that seamlessly integrate technology with style. Our mission is to provide innovative solutions that enhance your everyday life. With a team of passionate individuals, we strive to push the boundaries of design and functionality.</p>
 </section>
 
-<section id="services" style="background-color: #f0f8ff; padding: 50px 20px;">
+<section id="services" class="section">
   <h2>Our Services</h2>
   <ul>
     <li>Smartwatch Design</li>
@@ -101,16 +119,17 @@ body {
   </ul>
 </section>
 
-<section id="contact" style="background-color: #fff; padding: 50px 20px;">
+<section id="contact" class="section">
   <h2>Contact Us</h2>
   <p>If you have any questions or inquiries, feel free to contact us:</p>
   <p>Email: info@revolvtech.com</p>
   <p>Phone: +1234567890</p>
 </section>
 
-<footer style="background-color: #333; color: #fff; text-align: center; padding: 20px 0;">
+<footer class="footer">
   <p>&copy; 2024 Revolve Tech. All rights reserved.</p>
 </footer>
 
 </body>
 </html>
+

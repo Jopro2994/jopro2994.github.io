@@ -38,8 +38,45 @@
         <a href="https://www.youtube.com/watch?v=4t7BgyA7IOI" target="_blank"><img src=https://gifdb.com/images/high/animated-emoji-shiny-sunglasses-97hzm41tm1o6q97g.gif height="300"/></a>
         <img src="arrow-2059.gif" height="300><br><br><br><br><br><br>
 
+	     
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schere, Stein, Papier</title>
+<script>
+function spiel() {
+    var spielerAuswahl = document.getElementById("auswahl").value;
+    var optionen = ["Schere", "Stein", "Papier"];
+    var computerAuswahl = optionen[Math.floor(Math.random() * optionen.length)];
+    var ergebnis;
+    
+    if (spielerAuswahl === computerAuswahl) {
+        ergebnis = "Unentschieden!";
+    } else if ((spielerAuswahl === "Schere" && computerAuswahl === "Papier") || 
+               (spielerAuswahl === "Stein" && computerAuswahl === "Schere") || 
+               (spielerAuswahl === "Papier" && computerAuswahl === "Stein")) {
+        ergebnis = "Du gewinnst!";
+    } else {
+        ergebnis = "Computer gewinnt!";
+    }
+    
+    document.getElementById("ergebnis").innerHTML = "Du hast " + spielerAuswahl + " gewählt. Computer hat " + computerAuswahl + " gewählt. " + ergebnis;
+}
+</script>
+</head>
+<body>
 
+<h1>Schere, Stein, Papier</h1>
+<select id="auswahl">
+  <option value="Schere">Schere</option>
+  <option value="Stein">Stein</option>
+  <option value="Papier">Papier</option>
+</select>
+<button onclick="spiel()">Los!</button>
+<p id="ergebnis"></p>
 
+</body>
 
 <html lang="de">
 <head>

@@ -8,12 +8,11 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2; /* Hellblau */
     margin: 0;
     padding: 0;
   }
   header {
-    background-color: #333; /* Dunkelblau */
+    background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -32,33 +31,30 @@
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #007bff; /* Blauer Button */
+    background-color: #007bff;
   }
   nav ul li a:hover {
-    background-color: #0056b3; /* Dunklerer Blauton beim Hovern */
+    background-color: #0056b3;
   }
   section {
     padding: 50px 20px;
+    text-align: center;
   }
-  footer {
-    background-color: #0056b3; /* Dunkelblau für den Footer */
+  .order-section {
+    background-color: #f2f2f2;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .order-section button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
+    border: none;
+    cursor: pointer;
   }
-  .hero-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    font-size: 32px;
+  .order-section button:hover {
+    background-color: #0056b3;
   }
 </style>
 </head>
@@ -69,33 +65,22 @@
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#products">Products</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="hero-section">
-  <img src="https://www.inside-digital.de/img/huawei-watch-gt-3-vorstellung-newsbild.jpg?class=1200x900" alt="Revolve Tech" class="https://www.inside-digital.de/img/huawei-watch-gt-3-vorstellung-newsbild.jpg?class=1200x900">
-  <div class="hero-text">
-    <h2>Welcome to Revolve Tech</h2>
-    <p>We create modern and stylish smartwatches and accessories to complement your lifestyle.</p>
-  </div>
-</section>
-
 <section id="about">
   <h2>About Us</h2>
-  <p>Revolve Tech is dedicated to crafting cutting-edge smartwatches and accessories that seamlessly integrate technology with style. Our mission is to provide innovative solutions that enhance your everyday life.</p>
+  <p>Welcome to Revolve Tech, where innovation meets excellence. We are dedicated to providing cutting-edge technology solutions to our clients.</p>
+  <img src="about-image.jpg" alt="About Image">
 </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>Smartwatch Design</li>
-    <li>Accessory Development</li>
-    <li>Customization Services</li>
-    <li>Customer Support</li>
-  </ul>
+<section id="products">
+  <h2>Our Products</h2>
+  <p>Check out our latest collection of stylish smartwatches and accessories.</p>
+  <img src="products-image.jpg" alt="Products Image">
 </section>
 
 <section id="contact">
@@ -105,9 +90,23 @@
   <p>Phone: +1234567890</p>
 </section>
 
-<footer>
-  <p>&copy; 2024 Revolve Tech. All rights reserved.</p>
-</footer>
+<section class="order-section">
+  <h2>Order Now</h2>
+  <p>Place your order for our premium smartwatches now!</p>
+  <button>Order Now</button>
+</section>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
 
 </body>
 </html>

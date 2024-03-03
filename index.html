@@ -1,208 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revolve Tech</title>
-<style bgcolor="blue">
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Hellblau */
-    margin: 0;
-    padding: 0;
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #007bff; /* Blau */
-    color: #fff;
-    padding: 4px 0; /* Dünneres Padding */
-    text-align: center;
-    z-index: 1000; /* Z-Index erhöht, um über andere Elemente zu liegen */
-}
-
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
-}
-
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px; /* Dünneres Padding */
-    border-radius: 5px;
-    background-color: #0056b3; /* Dunkleres Blau */
-    margin-left: 5px;
-    transition: background-color 0.3s ease; /* Animation für Farbänderung */
-}
-
-.navbar a:hover {
-    background-color: #007bff; /* Blauer Button beim Hovern */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #007bff; /* Blau */
-    min-width: 200px;
-    z-index: 1;
-    right: 0;
-    animation: fadeIn 0.5s ease; /* Animation für Einblenden */
-}
-
-.dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.hero-section {
-    background-color: #f0f8ff; /* Hellblau */
-    padding: 100px 20px;
-    text-align: center;
-    animation: fadeIn 1s ease; /* Animation für Einblenden */
-}
-
-.section {
-    background-color: #fff; /* Weiß */
-    padding: 50px 20px;
-    text-align: center;
-    animation: fadeIn 1s ease; /* Animation für Einblenden */
-}
-
-.footer {
-    background-color: #007bff; /* Blau */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    animation: fadeIn 1s ease; /* Animation für Einblenden */
-}
-
-/* Generierter Text */
-.generate-text {
-    padding: 20px;
-    text-align: left;
-    opacity: 0; /* Text standardmäßig ausgeblendet */
-    transform: translateY(70px); /* Text standardmäßig nach unten verschieben */
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revolve Tech - Die Zeit neu erleben</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1d1d2a; /* Dunkelblau */
+      color: #ffffff; /* Weiß */
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #52c1dd; /* Hellblau */
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #52c1dd; /* Hellblau */
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      transform: translateX(200px);
+      transition: transform 0.3s ease-in-out;
+    }
+    nav.open {
+      transform: translateX(0);
+    }
+    nav a {
+      display: block;
+      color: #ffffff; /* Weiß */
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+    nav a:hover {
+      color: #ff7f0e; /* Orange */
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #52c1dd; /* Hellblau */
+      color: #ffffff; /* Weiß */
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Willkommen bei Revolve Tech</h1>
+    <p>Die Zeit neu erleben mit unseren innovativen Smartuhren und Accessoires</p>
+    <button id="toggleMenu">Menü</button>
+  </header>
+  <nav id="mainMenu">
+    <a href="#about">Über uns</a>
+    <a href="#products">Produkte</a>
+    <a href="#press">Presse</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+  <section id="about">
+    <h2>Über uns</h2>
+    <p>Revolve Tech ist ein führendes Unternehmen in der Entwicklung und Herstellung von smarten Wearables und Accessoires. Unsere Produkte verbinden innovative Technologie mit einem modernen Design und helfen unseren Kunden, ihren Alltag zu optimieren.</p>
+  </section>
+  <section id="products">
+    <h2>Unsere Produkte</h2>
+    <p>Entdecke unsere neuesten Smartuhren und Accessoires, die dir helfen, deine Zeit effizienter zu nutzen und deinen Lebensstil zu verbessern.</p>
+  </section>
+  <section id="press">
+    <h2>Presse</h2>
+    <p>Hier finden Sie die neuesten Pressemitteilungen und Medienressourcen von Revolve Tech.</p>
+  </section>
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Kontaktieren Sie unser Team für weitere Informationen oder geschäftliche Anfragen.</p>
+  </section>
+  <footer>
+    <p>&copy; 2024 Revolve Tech GmbH</p>
+  </footer>
+  <script>
+    const toggleMenu = document.getElementById('toggleMenu');
+    const mainMenu = document.getElementById('mainMenu');
 
-<div class="header">
-  <h1>Revolve Tech</h1>
-  <div class="navbar">
-    <div class="dropdown">
-      <button class="dropbtn">&#9776; Menu</button> <!-- Überarbeiteter Menü-Button -->
-      <div class="dropdown-content">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="hero-section">
-  <div class="hero-text">
-    <h2>Welcome to Revolve Tech</h2>
-    <p>We create modern and stylish smartwatches and accessories to complement your lifestyle. Our innovative products are designed to seamlessly integrate technology with elegance. Explore our website to learn more about our company and our offerings.</p>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <h2>About Us</h2>
-  <p>Revolve Tech is a leading manufacturer of smartwatches and accessories. Founded in 2010, we have been dedicated to providing high-quality products that combine functionality with fashion. Our team of designers and engineers work tirelessly to create innovative solutions that enhance the way you live.</p>
-</section>
-
-<section id="services" class="section">
-  <h2>Our Services</h2>
-  <p>At Revolve Tech, we offer a range of services to meet your needs:</p>
-  <ul>
-    <li><strong>Smartwatch Design:</strong> Our expert designers create sleek and stylish smartwatches with cutting-edge features.</li>
-    <li><strong>Accessory Development:</strong> We develop a variety of accessories to complement your smartwatch, including bands, chargers, and cases.</li>
-    <li><strong>Customization Services:</strong> Personalize your smartwatch with our customization options, including engraving and color choices.</li>
-    <li><strong>Customer Support:</strong> Our dedicated customer support team is available to assist you with any questions or issues you may have.</li>
-  </ul>
-</section>
-
-<section id="products" class="section">
-  <h2>Our Products</h2>
-  <div class="product">
-    <img src="https://www.faz.net/kaufkompass/wp-content/uploads/2023/10/smartwatches-oktober2023-aufmacher.jpg" alt="Smartwatch">
-    <h3>Smartwatch</h3>
-    <p>Stay connected and stylish with our latest smartwatch. Featuring advanced technology and sleek design, it's the perfect accessory for your everyday life.</p>
-  </div>
-  <div class="product">
-    <img src="https://cdn.prod.www.spiegel.de/images/c99e8b05-9a37-4d70-9479-ae85dab5128e_w1200_r2_fpx50_fpy43.jpg" alt="Accessories">
-    <h3>Accessories</h3>
-    <p>Complete your look with our range of stylish accessories. From bands to cases, we have everything you need to personalize your smartwatch.</p>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <p>If you have any questions or inquiries, feel free to contact us:</p>
-  <p>Email: info@revolvtech.com</p>
-  <p>Phone: +1234567890</p>
-</section>
-
-<footer class="footer">
-  <p>&copy; 2024 Revolve Tech. All rights reserved.</p>
-  <div class="footer-buttons">
-    <button>Terms & Conditions</button>
-    <button>Privacy Policy</button>
-    <button>Cookie Settings</button>
-  </div>
-</footer>
-
-<!-- Generierter Text -->
-<div class="generate-text">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
-    <!-- Mehr generierter Text hier -->
-</div>
-
-<script>
-// Einblenden des Texts beim Scrollen
-window.addEventListener('scroll', function() {
-    var elementsToShow = document.querySelectorAll('.section, .generate-text');
-    elementsToShow.forEach(function(element) {
-        if (isElementInViewport(element)) {
-            element.style.opacity = 1;
-            element.style.transform = "translateY(0)";
-        }
+    toggleMenu.addEventListener('click', function() {
+      mainMenu.classList.toggle('open');
     });
-});
-
-// Überprüfen, ob ein Element im Viewport ist
-function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-</script>
-
+  </script>
 </body>
 </html>

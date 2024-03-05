@@ -123,6 +123,7 @@
 	
 
 	
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -144,21 +145,14 @@
   #gameCanvas {
     display: none;
   }
-  h1 {
-    font-size: 32px;
-  }
-  #restart-container {
-    margin-top: 20px;
-  }
 </style>
 </head>
 <body>
-<h1>Dino-Spiel</h1>
+<h1>Dino Browser Game</h1>
 <div id="game-container">
   <button onclick="startGame()">Start</button>
 </div>
 <canvas id="gameCanvas" width="800" height="400"></canvas>
-<div id="restart-container"></div>
 
 <script>
   var canvas = document.getElementById('gameCanvas');
@@ -166,11 +160,11 @@
 
   var dino = {
     x: 50,
-    y: 300,
+    y: 260, // Dino höher positioniert
     width: 40,
     height: 40,
     jumping: false,
-    jumpPower: 10,
+    jumpPower: 15, // Dino springt höher
     gravity: 1,
     velocityY: 0,
     color: '#333'
@@ -202,7 +196,6 @@
   function startGame() {
     document.getElementById('game-container').innerHTML = '';
     document.getElementById('gameCanvas').style.display = 'block';
-    document.getElementById('restart-container').innerHTML = '';
     isGameOver = false;
     score = 0;
     obstacles = [];
@@ -216,12 +209,12 @@
       dino.velocityY += dino.gravity;
       dino.y += dino.velocityY;
 
-      if (dino.y > 300) {
-        dino.y = 300;
+      if (dino.y > 260) { // Dino springt nicht mehr so tief
+        dino.y = 260;
         dino.jumping = false;
       }
 
-      if (Math.random() < 0.01) {
+      if (Math.random() < 0.005) { // Weniger Hindernisse
         createObstacle();
       }
 
@@ -259,7 +252,7 @@
   function createObstacle() {
     var obstacle = {
       x: canvas.width,
-      y: 320,
+      y: 280, // Hindernisse höher positioniert
       width: 20,
       height: 20,
       color: '#f00',
@@ -281,7 +274,7 @@
     ctx.fillStyle = '#000';
     ctx.font = '24px Arial';
     ctx.fillText('Game Over! Score: ' + score, canvas.width / 2 - 100, canvas.height / 2);
-    document.getElementById('restart-container').innerHTML = '<button onclick="startGame()">Restart</button>';
+    document.getElementById('game-container').innerHTML = '<button onclick="startGame()">Restart</button>';
   }
 
   document.addEventListener('keydown', function(event) {

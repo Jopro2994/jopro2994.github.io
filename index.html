@@ -115,6 +115,106 @@
 </body>
 
 
+
+	<div id="game-container"></div>
+
+<script>
+  var gameContainer = document.getElementById('game-container');
+  var canvas = document.createElement('canvas');
+  canvas.width = 800;
+  canvas.height = 400;
+  gameContainer.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+
+  var dino = {
+    x: 50,
+    y: 300,
+    width: 40,
+    height: 40,
+    jumping: false,
+    jumpPower: 10,
+    gravity: 1,
+    velocityY: 0,
+    color: '#333'
+  };
+
+  var obstacle = {
+    x: canvas.width,
+    y: 320,
+    width: 20,
+    height: 20,
+    color: '#f00',
+    velocityX: 5
+  };
+
+  var isGameOver = false;
+
+  function drawDino() {
+    ctx.fillStyle = dino.color;
+    ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+  }
+
+  function drawObstacle() {
+    ctx.fillStyle = obstacle.color;
+    ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+  }
+
+  function jump() {
+    if (!dino.jumping) {
+      dino.jumping = true;
+      dino.velocityY = -dino.jumpPower;
+    }
+  }
+
+  function update() {
+    if (!isGameOver) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      dino.velocityY += dino.gravity;
+      dino.y += dino.velocityY;
+
+      if (dino.y > 300) {
+        dino.y = 300;
+        dino.jumping = false;
+      }
+
+      obstacle.x -= obstacle.velocityX;
+
+      if (obstacle.x + obstacle.width < 0) {
+        obstacle.x = canvas.width;
+      }
+
+      if (checkCollision()) {
+        isGameOver = true;
+      }
+
+      drawDino();
+      drawObstacle();
+
+      if (!isGameOver) {
+        requestAnimationFrame(update);
+      }
+    }
+  }
+
+  function checkCollision() {
+    var dinoRight = dino.x + dino.width;
+    var dinoBottom = dino.y + dino.height;
+    var obstacleRight = obstacle.x + obstacle.width;
+    var obstacleBottom = obstacle.y + obstacle.height;
+
+    return dinoRight > obstacle.x && dino.x < obstacleRight && dinoBottom > obstacle.y && dino.y < obstacleBottom;
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+      jump();
+    }
+  });
+
+  update();
+</script>
+
 	     
 
 

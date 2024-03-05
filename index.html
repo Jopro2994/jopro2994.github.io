@@ -122,7 +122,7 @@
 
 	
 
-	<!DOCTYPE html>
+	
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -137,20 +137,28 @@
     margin-top: 50px;
   }
   button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 20px;
     cursor: pointer;
   }
   #gameCanvas {
     display: none;
   }
+  h1 {
+    font-size: 32px;
+  }
+  #restart-container {
+    margin-top: 20px;
+  }
 </style>
 </head>
 <body>
+<h1>Dino-Spiel</h1>
 <div id="game-container">
   <button onclick="startGame()">Start</button>
 </div>
 <canvas id="gameCanvas" width="800" height="400"></canvas>
+<div id="restart-container"></div>
 
 <script>
   var canvas = document.getElementById('gameCanvas');
@@ -194,6 +202,7 @@
   function startGame() {
     document.getElementById('game-container').innerHTML = '';
     document.getElementById('gameCanvas').style.display = 'block';
+    document.getElementById('restart-container').innerHTML = '';
     isGameOver = false;
     score = 0;
     obstacles = [];
@@ -243,6 +252,7 @@
 
   function drawScore() {
     ctx.fillStyle = '#000';
+    ctx.font = '24px Arial';
     ctx.fillText('Score: ' + score, 10, 30);
   }
 
@@ -269,20 +279,18 @@
 
   function endGame() {
     ctx.fillStyle = '#000';
+    ctx.font = '24px Arial';
     ctx.fillText('Game Over! Score: ' + score, canvas.width / 2 - 100, canvas.height / 2);
-    document.getElementById('game-container').innerHTML = '<button onclick="startGame()">Restart</button>';
+    document.getElementById('restart-container').innerHTML = '<button onclick="startGame()">Restart</button>';
   }
 
   document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
+    if (event.code === 'KeyW') {
       jump();
     }
   });
 </script>
 </body>
-</html>
-
-
 
 	     
 

@@ -302,9 +302,17 @@
 
 
 
+
+	
+
+	
+
+
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeittracker</title>
 <style>
   #timer {
     position: fixed;
@@ -336,12 +344,18 @@
     // Zeit formatieren und anzeigen
     var formattedTime = hours + "h " + minutes + "m " + seconds + "s";
     document.getElementById("timer").innerHTML = "Verbrachte Zeit: " + formattedTime;
+    // Zeit in den Web Storage speichern
+    localStorage.setItem("startTime", startTime);
   }
 
-  // Funktion zur Initialisierung des Trackings beim Laden der Seite
+  // Funktion zur Initialisierung des Trackings
   function startTracking() {
-    // Startzeit setzen
-    startTime = new Date().getTime();
+    // Startzeit aus dem Web Storage abrufen oder neu setzen
+    startTime = localStorage.getItem("startTime");
+    if (!startTime) {
+      startTime = new Date().getTime();
+      localStorage.setItem("startTime", startTime);
+    }
     // Anzeige der verstrichenen Zeit aktualisieren alle 1 Sekunde
     setInterval(showElapsedTime, 1000);
   }
@@ -350,6 +364,9 @@
   window.addEventListener('load', startTracking);
 </script>
 </body>
+
+
+
 
 
 

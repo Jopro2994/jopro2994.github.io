@@ -43,7 +43,7 @@
 
 	
 	
-<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,37 +56,62 @@
 </style>
 </head>
 <body>
-<h2>Rock Paper Scissors</h2>
-<p>Choose your move:</p>
-<button onclick="play('rock')">Rock</button>
-<button onclick="play('paper')">Paper</button>
-<button onclick="play('scissors')">Scissors</button>
-<p id="result"></p>
-<script>
-function play(playerMove) {
-    var computerMove = 'rock'; // Computer always chooses rock
-    var result = '';
-    var randomNumber = Math.floor(Math.random() * 100); // Generate random number between 0 and 99
-    
-    // Determine the winner
-    if ((playerMove === 'rock' && computerMove === 'scissors') ||
-        (playerMove === 'paper' && computerMove === 'rock') ||
-        (playerMove === 'scissors' && computerMove === 'paper')) {
-        if (randomNumber === 0) { // 1/100 chance for player to win
-            result = 'You win!';
-        } else {
-            result = 'Computer wins!';
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-    } else if (playerMove === computerMove) {
-        result = 'It\'s a tie!';
-    } else {
-        result = 'Computer wins!';
-    }
-    
-    document.getElementById('result').innerHTML = 'You chose ' + playerMove + ', computer chose ' + computerMove + '. ' + result;
-}
-</script>
+        h1 {
+            color: #333;
+        }
+        .choices {
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="choices">
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissors')">Scissors</button>
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        function playGame(userChoice) {
+            var choices = ['rock', 'paper', 'scissors'];
+            var computerChoice = choices[Math.floor(Math.random() * 3)];
+            
+            var result;
+            if (userChoice === computerChoice) {
+                result = "It's a tie!";
+            } else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+                       (userChoice === 'paper' && computerChoice === 'rock') ||
+                       (userChoice === 'scissors' && computerChoice === 'paper')) {
+                result = "You win!";
+            } else {
+                result = "Computer wins!";
+            }
+            
+            document.getElementById('result').innerHTML = "You chose " + userChoice + ". Computer chose " + computerChoice + ". " + result;
+        }
+    </script>
 </body>
+
 
 	     
 

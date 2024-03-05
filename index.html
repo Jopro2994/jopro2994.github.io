@@ -123,7 +123,6 @@
 	
 
 	
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -160,11 +159,11 @@
 
   var dino = {
     x: 50,
-    y: 260, // Dino höher positioniert
+    y: 260,
     width: 40,
     height: 40,
     jumping: false,
-    jumpPower: 15, // Dino springt höher
+    jumpPower: 15,
     gravity: 1,
     velocityY: 0,
     color: '#333'
@@ -209,17 +208,17 @@
       dino.velocityY += dino.gravity;
       dino.y += dino.velocityY;
 
-      if (dino.y > 260) { // Dino springt nicht mehr so tief
+      if (dino.y > 260) {
         dino.y = 260;
         dino.jumping = false;
       }
 
-      if (Math.random() < 0.005) { // Weniger Hindernisse
+      if (Math.random() < 0.005) {
         createObstacle();
       }
 
       obstacles.forEach(function(obstacle) {
-        obstacle.x -= obstacle.velocityX;
+        obstacle.x -= obstacle.velocityX; // Erhöhte Geschwindigkeit
 
         if (obstacle.x + obstacle.width < 0) {
           obstacles.shift();
@@ -252,11 +251,11 @@
   function createObstacle() {
     var obstacle = {
       x: canvas.width,
-      y: 280, // Hindernisse höher positioniert
+      y: 280,
       width: 20,
       height: 20,
       color: '#f00',
-      velocityX: Math.random() * 2 + 2 // Geschwindigkeit zwischen 2 und 4
+      velocityX: Math.random() * 4 + 4 // Erhöhte Geschwindigkeit
     };
     obstacles.push(obstacle);
   }

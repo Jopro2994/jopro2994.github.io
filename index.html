@@ -22,15 +22,12 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            position: relative;
         }
-        h1 {
-            color: #333;
-        }
-        img {
-            display: block;
-            margin: 0 auto;
-            width: 200px; /* Adjust the width of the image */
-            margin-bottom: 20px;
+        .btn-support {
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
         .btn {
             display: inline-block;
@@ -72,6 +69,9 @@
             <a class="btn" href="https://nik-787.github.io/FireFrameStudios/">Fireframe Studios</a>
             <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/">Shield Security Systems</a>
         </div><br><br>
+        <div class="btn-support">
+            <a class="btn" href="#">HTML Hilfe</a>
+        </div>
         <body>
           <div class=suport>
           <font size="1">sponsored by</font>
@@ -86,67 +86,5 @@
     <audio autoplay loop>
         <source src="fahrstuhl.mp3" type="audio/mpeg">
     </audio>
-</body>
-<head>
-<style>
-/* Stil für den Button */
-.button {
-  top: 40px;
-  right: 70px;
-  background-color: #ff7f00;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Stil für das Dropdown-Menü */
-.dropdown {
-  position: fixed;
-  top: 60px;
-  right: 20px;
-  display: none;
-}
-
-/* Stil für die Dropdown-Buttons */
-.dropdown-content {
-  background-color: #ff7f00;
-  padding: 10px;
-}
-
-.dropdown-content a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.dropdown-content a:hover {
-  background-color: ##ff7f00;
-}
-</style>
-</head>
-<body>
-
-<button class="button" onclick="toggleDropdown()">HTML Hilfe</button>
-
-<div class="dropdown" id="dropdownMenu">
-  <div class="dropdown-content">
-    <a href="https://www.w3schools.com/html/default.asp" style="background-color: #ff7f00;">W3 schools</a>
-    <a href="https://wiki.selfhtml.org/wiki/SELFHTML" style="background-color: #ff7f00;">Self HTML</a>
-  </div>
-</div>
-
-<script>
-function toggleDropdown() {
-  var dropdownMenu = document.getElementById("dropdownMenu");
-  if (dropdownMenu.style.display === "block") {
-    dropdownMenu.style.display = "none";
-  } else {
-    dropdownMenu.style.display = "block";
-  }
-}
-</script>
 </body>
 </html>

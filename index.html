@@ -29,6 +29,29 @@
             top: 20px;
             right: 20px;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
         .btn {
             display: inline-block;
             padding: 10px 20px;
@@ -48,8 +71,8 @@
 </head>
 <body>
     <div class="container">
-     <img id="JoproLogo" src="Jopro Logo PNG.PNG" alt="Jopro Logo"></a>
-      <style>#JoproLogo {width: 200px; height: auto;}</style>
+        <img id="JoproLogo" src="Jopro Logo PNG.PNG" alt="Jopro Logo"></a>
+        <style>#JoproLogo {width: 200px; height: auto;}</style>
         <div>
             <h2>Die anderen Keks</h2>
             <a class="btn" href="https://jopro2994.github.io/1/">Jonathan</a>
@@ -69,17 +92,24 @@
             <a class="btn" href="https://jopro2994.github.io/RevolveTech/">Revolve Tech</a>
             <a class="btn" href="https://nik-787.github.io/FireFrameStudios/">Fireframe Studios</a>
             <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/">Shield Security Systems</a>
-        </div><br><br>
+        </div>
         <div class="btn-support">
-            <a class="btn" href="#">Hilfe?</a>
+            <div class="dropdown">
+                <button class="btn">HTML Hilfe</button>
+                <div class="dropdown-content">
+                    <a href="#">HTML Basics</a>
+                    <a href="#">HTML Forms</a>
+                </div>
+            </div>
         </div>
         <body>
-          <div class=suport>
-          <font size="1">sponsored by</font>
-          <center>
-            <img id="Logo1" src="Alle Logos.png" alt="Logos von Sponsoren"style="margin:5px">
-            <style>#Logo1 {width: 50%; height: auto;}</style>
-          </div>
+            <div class=support>
+                <font size="1">sponsored by</font>
+                <center>
+                    <img id="Logo1" src="Alle Logos.png" alt="Logos von Sponsoren"style="margin:5px">
+                    <style>#Logo1 {width: 50%; height: auto;}</style>
+                </center>
+            </div>
         </body>
     </div>
 </body>

@@ -31,7 +31,6 @@
             background-color: #ffffff;
             color: black;
             padding: 10px;
-            max-height: 200px;
         }
         .btn {
             display: inline-block;
@@ -86,38 +85,38 @@
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-
         .slides img {
-            height: 100px; /* Setzt die Höhe der Logos */
-            object-fit: contain;
+            width: 100%;
             flex-shrink: 0;
-            margin: 0 10px; /* Fügt Abstand zwischen den Bildern hinzu */
+            height: 200px; /* Einheitliche Höhe */
         }
-
         .navigation {
             position: absolute;
-            top: 50%;
+            top: 0;
+            bottom: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            transform: translateY(-50%);
+            align-items: center;
         }
-
         .navigation button {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #ff9900;
             border: none;
             color: white;
             padding: 10px;
             cursor: pointer;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            transition: background-color 0.3s;
+        }
+        .navigation button:hover {
+            background-color: #a66400;
         }
     </style>
 </head>
@@ -160,8 +159,8 @@
                 <img src="Revolve.svg" alt="Revolve Tech Logo">
                 <img src="Fireframe.svg" alt="Fire Frame Studios Logo">
                 <img src="Videoschnitt.svg" alt="Videoschnitt Agentur Vincent Knörnschild Logo">
-                <img src="Shield.svg" alt="Shield Secutity Logo">
-                <img src="Medizinzentrum.svg" alt="Medizinzentum Maazoul Logo">
+                <img src="Shield.svg" alt="Shield Security Logo">
+                <img src="Medizinzentrum.svg" alt="Medizinzentrum Maazoul Logo">
                 <img src="Store.svg" alt="Store Light Logo">
             </div>
             <div class="navigation">

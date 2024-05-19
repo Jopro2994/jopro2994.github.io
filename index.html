@@ -55,8 +55,8 @@
         }
         .btn-support {
             position: absolute;
-            top: 10px; /* Höhe des Abstands vom oberen Rand anpassen */
-            right: 10px; /* Abstand zum rechten Rand anpassen */
+            top: 10px; /* Abstand vom oberen Rand anpassen */
+            right: 10px; /* Abstand vom rechten Rand anpassen */
         }
         .dropdown {
             position: relative;
@@ -96,9 +96,13 @@
             transition: transform 0.5s ease-in-out;
             height: 100%; /* Höhe der Slides anpassen */
         }
-        .slides img {
-            max-width: 100%;
-            height: 100%; /* Einheitliche Höhe der Bilder */
+        .slide {
+            flex: 0 0 auto;
+            width: 100%; /* Breite jedes Slides auf 100% des sichtbaren Bereichs setzen */
+        }
+        .slide img {
+            max-height: 100%; /* Maximale Höhe der Bilder anpassen */
+            width: auto;
             object-fit: contain; /* Bildanpassung, um sicherzustellen, dass es vollständig sichtbar ist */
         }
         .navigation {
@@ -129,13 +133,11 @@
             background-color: #a66400;
         }
         .navigation button.prev {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+            border-radius: 5px;
             left: 0;
         }
         .navigation button.next {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
+            border-radius: 5px;
             right: 0;
         }
     </style>
@@ -171,17 +173,16 @@
             </div>
         </div>
     </div>
-
+    <p style="margin: 0;">sponsored by</p>
     <div class="container1">
-        <p style="margin: 0;">sponsored by</p>
         <div class="slider">
             <div class="slides">
-                <img src="Revolve.svg" alt="Revolve Tech Logo">
-                <img src="Fireframe.svg" alt="Fire Frame Studios Logo">
-                <img src="Videoschnitt.svg" alt="Videoschnitt Agentur Vincent Knörnschild Logo">
-                <img src="Shield.svg" alt="Shield Security Logo">
-                <img src="Medizinzentrum.svg" alt="Medizinzentrum Maazoul Logo">
-                <img src="Store.svg" alt="Store Light Logo">
+                <div class="slide"><img src="Revolve.svg" alt="Revolve Tech Logo"></div>
+                <div class="slide"><img src="Fireframe.svg" alt="Fire Frame Studios Logo"></div>
+                <div class="slide"><img src="Videoschnitt.svg" alt="Videoschnitt Agentur Vincent Knörnschild Logo"></div>
+                <div class="slide"><img src="Shield.svg" alt="Shield Security Logo"></div>
+                <div class="slide"><img src="Medizinzentrum.svg" alt="Medizinzentrum Maazoul Logo"></div>
+                <div class="slide"><img src="Store.svg" alt="Store Light Logo"></div>
             </div>
             <div class="navigation">
                 <button id="prev" class="prev">&lt;</button>
@@ -196,7 +197,8 @@
 
     <script>
         const slides = document.querySelector('.slides');
-        const images = document.querySelectorAll('.slides img');
+        const slideWidth = document.querySelector('.slide').offsetWidth; // Breite eines einzelnen Slides
+        const images = document.querySelectorAll('.slides .slide');
         let index = 0;
 
         function showSlide(n) {
@@ -207,7 +209,7 @@
             } else {
                 index = n;
             }
-            slides.style.transform = `translateX(${-index * 100}%)`;
+            slides.style.transform = `translateX(${-index * slideWidth}px)`;
         }
 
         document.getElementById('next').addEventListener('click', () => {

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="icon" type="image/png" href="Jopro Logo PNG.PNG"/>
-</head>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Hub</title>
+    <link rel="icon" type="image/png" href="Jopro Logo PNG.PNG"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,26 +12,40 @@
             margin: 0;
             padding: 0;
             background-color: #2e2e2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container, .container1 {
+            max-width: 800px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+            text-align: center;
         }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
             background-color: #000000;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-            text-align: center;
-            position: relative;
         }
-                .container1 {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+        .container1 {
             background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-            text-align: center;
-            position: relative;
+            color: black;
+            padding: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ff9900;
+            color: black;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #a66400;
         }
         .btn-support {
             position: absolute;
@@ -47,87 +59,140 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
+            background-color: #333;
+            color: white;
             min-width: 160px;
+            border-radius: 5px;
             z-index: 1;
+            right: 0;
         }
         .dropdown-content a {
-            color: black;
+            color: white;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
+            border-radius: 5px;
         }
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #555;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #ff9900; /* Orange color */
-            color: black;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .slider {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
-        .btn:hover {
-            background-color: #a66400; /* Darker shade of orange on hover */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        </a>
-        <div>
-            <img src="Link-Hub.svg"/>
-            <h2>Die anderen Keks</h2>
-            <a class="btn" href="https://jopro2994.github.io/1/">Jonathan</a>
-            <a class="btn" href="https://nik-787.github.io/187/">Nikolaus</a>
-            <a class="btn" href="https://jopro2994.github.io/Vincey/">Vincent</a>
-            <a class="btn" href="https://dreams-999.github.io/1/">Leon</a>
-            <a class="btn" href="https://rawanwar77.github.io/index2.html">Rawan</a>
-        </div>
-        <div>
-            <h2>Hausaufgaben</h2>
-            <a class="btn" href="https://jopro2994.github.io/1/Hausaufgaben1.html">Hausaufgaben bis 7.3.24</a>
-            <a class="btn" href="https://jopro2994.github.io/Homework/">Schreinerei Meier Website</a>
-            <a class="btn" href="https://jopro2994.github.io/Homework/homebookmarks">Bookmarks</a>
-            <a class="btn" href="https://jopro2994.github.io/Homework/Webseite_Merkel/index.html">Merkel</a>
-        </div>
-        <div>
-            <h2>Firmen-Webseiten</h2>
-            <a class="btn" href="https://jopro2994.github.io/RevolveTech/">Revolve Tech</a>
-            <a class="btn" href="https://nik-787.github.io/FireFrameStudios/">Fireframe Studios</a>
-            <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/">Shield Security</a>
-        </div>
+        <img src="Link-Hub.svg" alt="Logo"/>
+        <h2>Die anderen Keks</h2>
+        <a class="btn" href="https://jopro2994.github.io/1/">Jonathan</a>
+        <a class="btn" href="https://nik-787.github.io/187/">Nikolaus</a>
+        <a class="btn" href="https://jopro2994.github.io/Vincey/">Vincent</a>
+        <a class="btn" href="https://dreams-999.github.io/1/">Leon</a>
+        <a class="btn" href="https://rawanwar77.github.io/index2.html">Rawan</a>
+
+        <h2>Hausaufgaben</h2>
+        <a class="btn" href="https://jopro2994.github.io/1/Hausaufgaben1.html">Hausaufgaben bis 7.3.24</a>
+        <a class="btn" href="https://jopro2994.github.io/Homework/">Schreinerei Meier Website</a>
+        <a class="btn" href="https://jopro2994.github.io/Homework/homebookmarks">Bookmarks</a>
+        <a class="btn" href="https://jopro2994.github.io/Homework/Webseite_Merkel/index.html">Merkel</a>
+
+        <h2>Firmen-Webseiten</h2>
+        <a class="btn" href="https://jopro2994.github.io/RevolveTech/">Revolve Tech</a>
+        <a class="btn" href="https://nik-787.github.io/FireFrameStudios/">Fireframe Studios</a>
+        <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/">Shield Security</a>
+
         <div class="btn-support">
             <div class="dropdown">
                 <button class="btn">Hilfe?</button>
                 <div class="dropdown-content">
                     <a href="https://www.w3schools.com/html/default.asp">W3 Schools</a>
                     <a href="https://wiki.selfhtml.org/wiki/SELFHTML">Self HTML</a>
-                    <br><br><font size="1">sponsored by</font>
                 </div>
             </div>
         </div>
-      </div>
-  </div>
-        <body>
-            <div class="container1">
-                <center>
-                    <img id="Logo1" src="Alle Logos.png" alt="Logos von Sponsoren"style="margin:5px">
-                    <style>#Logo1 {width: 100%; height: auto;}</style>
-                </center>
+    </div>
+
+    <div class="container1">
+        <p style="margin: 0;">sponsored by</p>
+        <div class="slider">
+            <div class="slides">
+                <img src="bild1.jpg" alt="Bild 1">
+                <img src="bild2.jpg" alt="Bild 2">
+                <img src="bild3.jpg" alt="Bild 3">
+                <img src="bild4.jpg" alt="Bild 4">
+                <img src="bild5.jpg" alt="Bild 5">
+                <img src="bild6.jpg" alt="Bild 6">
+                <img src="bild7.jpg" alt="Bild 7">
             </div>
-</body>
-<body>
+            <div class="navigation">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+        </div>
+    </div>
+
     <audio autoplay loop>
         <source src="fahrstuhl.mp3" type="audio/mpeg">
     </audio>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        let index = 0;
+
+        function showSlide(n) {
+            if (n >= images.length) {
+                index = 0;
+            } else if (n < 0) {
+                index = images.length - 1;
+            } else {
+                index = n;
+            }
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            showSlide(index + 1);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            showSlide(index - 1);
+        });
+
+        setInterval(() => {
+            showSlide(index + 1);
+        }, 5000);
+    </script>
 </body>
 </html>

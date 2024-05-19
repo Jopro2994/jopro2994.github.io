@@ -87,15 +87,21 @@
             position: relative;
             overflow: hidden;
         }
+
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            width: 100%; /* ensuring the width of the slides container */
         }
+
         .slides img {
             width: auto;
             max-height: 150px; /* Setzt die maximale Höhe der Logos */
+            object-fit: contain; /* ensuring the images fit within their box */
             flex-shrink: 0;
+            flex-grow: 1; /* ensures images take up equal space */
         }
+
         .navigation {
             position: absolute;
             top: 50%;

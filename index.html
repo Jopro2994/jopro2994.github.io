@@ -86,20 +86,22 @@
             margin: 0 auto;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: 100%; /* ensuring the width of the slides container */
         }
 
         .slides img {
             width: auto;
-            max-height: 150px; /* Setzt die maximale Höhe der Logos */
-            object-fit: contain; /* ensuring the images fit within their box */
+            height: 100px; /* Setzt die Höhe der Logos */
+            object-fit: contain;
             flex-shrink: 0;
-            flex-grow: 1; /* ensures images take up equal space */
+            margin: 0 10px; /* Fügt Abstand zwischen den Bildern hinzu */
         }
 
         .navigation {
@@ -110,6 +112,7 @@
             justify-content: space-between;
             transform: translateY(-50%);
         }
+
         .navigation button {
             background-color: rgba(0, 0, 0, 0.5);
             border: none;

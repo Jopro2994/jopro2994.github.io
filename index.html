@@ -23,6 +23,9 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 1);
             text-align: center;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 50%;
         }
         .container {
             background-color: #000000;
@@ -31,6 +34,8 @@
             background-color: #ffffff;
             color: black;
             padding: 10px;
+            position: relative;
+            height: 100px;
         }
         .btn {
             display: inline-block;
@@ -97,8 +102,8 @@
         }
         .navigation {
             position: absolute;
-            top: 0;
-            bottom: 0;
+            top: 50%;
+            transform: translateY(-50%);
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -110,7 +115,7 @@
             color: white;
             cursor: pointer;
             width: 40px;
-            height: 100px;
+            height: calc(100% - 20px); /* Höhe anpassen */
             transition: background-color 0.3s;
             display: flex;
             align-items: center;
@@ -124,10 +129,12 @@
         .navigation button.prev {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
+            left: 10px; /* Rand hinzufügen */
         }
         .navigation button.next {
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
+            right: 10px; /* Rand hinzufügen */
         }
     </style>
 </head>

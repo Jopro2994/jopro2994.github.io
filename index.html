@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Hub</title>
     <link rel="icon" type="image/png" href="Jopro Logo PNG.PNG"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let idleTime = 0;
+        const idleLimit = 60;
+        const newTitle = "Ich vermisse dich, komm zurück!"; // Der neue Titel, der nach 1 Minute Inaktivität gesetzt wird
+
+        // Funktion, um die Inaktivitätszeit zu erhöhen
+        function timerIncrement() {
+            idleTime++;
+            if (idleTime >= idleLimit) {
+                document.title = newTitle;
+            }
+        }
+
+        // Funktion, um die Inaktivität zurückzusetzen
+        function resetTimer() {
+            idleTime = 0;
+            document.title = "Link Hub"; // Setzt den ursprünglichen Titel zurück
+        }
+
+        // Event-Listener, um die Inaktivität zurückzusetzen bei Benutzeraktivität
+        window.onload = function() {
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+        };
+
+        // Setze den Timer, um die Inaktivität zu überwachen
+        setInterval(timerIncrement, 1000); // 1 Sekunde Intervall
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -158,9 +188,9 @@
         <h2>Die Anderen Keks</h2>
         <a class="btn" href="https://jopro2994.github.io/1/">Jonathan</a>
         <a class="btn" href="https://nik-787.github.io/187/">Nikolaus</a>
-        <a class="btn" href="https://jopro2994.github.io/Vincey/">Vincent</a>
+        <a class="btn" href="https://jopro2994.github.io/Vincey/" target="_blank">Vincent</a>
         <a class="btn" href="https://dreams-999.github.io/1/">Leon</a>
-        <a class="btn" href="https://rawanwar77.github.io/index2.html">Rawan</a>
+        <a class="btn" href="https://rawanwar77.github.io/index2.html" target="_blank">Rawan</a>
 
         <h2>Hausaufgaben</h2>
         <a class="btn" href="https://jopro2994.github.io/1/Hausaufgaben1.html">Hausaufgaben bis 7.3.24</a>
@@ -169,16 +199,17 @@
         <a class="btn" href="https://jopro2994.github.io/Homework/Webseite_Merkel/index.html">Merkel</a>
 
         <h2>Firmen-Webseiten</h2>
-        <a class="btn" href="https://jopro2994.github.io/RevolveTech/">Revolve Tech</a>
-        <a class="btn" href="https://nik-787.github.io/FireFrameStudios/">Fireframe Studios</a>
-        <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/">Shield Security</a>
+        <a class="btn" href="https://jopro2994.github.io/RevolveTech/" target="_blank">Revolve Tech</a>
+        <a class="btn" href="https://nik-787.github.io/FireFrameStudios/" target="_blank">Fireframe Studios</a>
+        <a class="btn" href="https://dreams-999.github.io/ShieldSecurity/" target="_blank">Shield Security</a>
 
         <div class="btn-support">
             <div class="dropdown">
                 <button class="btn">Hilfe?</button>
                 <div class="dropdown-content">
-                    <a href="https://www.w3schools.com/html/default.asp">W3 Schools</a>
-                    <a href="https://wiki.selfhtml.org/wiki/SELFHTML">Self HTML</a>
+                    <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3 Schools</a>
+                    <a href="https://wiki.selfhtml.org/wiki/SELFHTML" target="_blank">Self HTML</a>
+                    <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>
                 </div>
             </div>
         </div>
@@ -274,7 +305,8 @@
             "Wir haben übrigens Morgen früh ne Abgabe...",
             "Hunnensohn!",
             "Interressante Seiten die du besuchst!",
-            "Man sieht sich!"
+            "Man sieht sich!",
+            "Ende der Diskussion!!!"
         ];
 
         const randomIndex = Math.floor(Math.random() * randomTexts.length);

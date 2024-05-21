@@ -141,12 +141,30 @@
             border-radius: 5px;
             right: 0;
         }
+        .logo {
+            width: 200px;
+            height: 100px;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+        }
+        .random-text {
+            font-size: 18px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="Link-Hub.svg" alt="Logo"/>
-        <h2>Die anderen Keks</h2>
+        <div class="logo">
+            <img src="Link-Hub.svg" alt="Logo"/>
+        </div>
+        <div class="random-text" id="randomText">
+        </div>
+    </div>
+    <div class="container">
+        <h2>Die Anderen Keks</h2>
         <a class="btn" href="https://jopro2994.github.io/1/">Jonathan</a>
         <a class="btn" href="https://nik-787.github.io/187/">Nikolaus</a>
         <a class="btn" href="https://jopro2994.github.io/Vincey/">Vincent</a>
@@ -234,6 +252,20 @@
                 location.reload();
             }
         };
+
+        // Zufälligen Text einfügen
+        const randomTexts = [
+            "Willkommen auf unserer Website!",
+            "Entdecken Sie neue Möglichkeiten!",
+            "Genießen Sie Ihren Aufenthalt bei uns!",
+            "Schauen Sie sich unsere neuesten Projekte an!",
+            "Finden Sie alles, was Sie brauchen, an einem Ort!"
+        ];
+
+        const randomIndex = Math.floor(Math.random() * randomTexts.length);
+        const randomText = randomTexts[randomIndex];
+
+        document.getElementById('randomText').textContent = randomText;
     </script>
 </body>
 </html>

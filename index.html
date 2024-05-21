@@ -54,9 +54,10 @@
             background-color: #a66400;
         }
         .btn-support {
-            position: absolute;
+            position: fixed;
             top: 10px; /* Abstand vom oberen Rand anpassen */
             right: 10px; /* Abstand vom rechten Rand anpassen */
+            z-index: 1000; /* Stellen Sie sicher, dass der Button über anderen Inhalten liegt */
         }
         .dropdown {
             position: relative;
@@ -223,6 +224,17 @@
         setInterval(() => {
             showSlide(index + 1);
         }, 5000);
+
+        // Funktion zum Neuladen der Seite bei Größenänderung
+        let currentWidth = window.innerWidth;
+        let currentHeight = window.innerHeight;
+
+        window.onresize = function() {
+            if (window.innerWidth !== currentWidth || window.innerHeight !== currentHeight) {
+                location.reload();
+            }
+        };
     </script>
 </body>
 </html>
+

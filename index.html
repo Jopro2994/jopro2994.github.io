@@ -265,16 +265,6 @@
             showSlide(index + 1);
         }, 5000);
 
-        // Funktion zum Neuladen der Seite bei Größenänderung
-        let currentWidth = window.innerWidth;
-        let currentHeight = window.innerHeight;
-
-        window.onresize = function() {
-            if (window.innerWidth !== currentWidth || window.innerHeight !== currentHeight) {
-                location.reload();
-            }
-        };
-
         // Zufälligen Text einfügen
         const randomTexts = [
             "Leom war hier...",
